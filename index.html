@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Battleship State Tracker JS</title>
+  </head>
+  <body>
+    <div class="game-info">
+      <p>Turn: <span id="turn-state"></span></p>
+      <p>Information: <span id="info"></span></p>
+    </div>
+
+    <div id="board-container"></div>
+
+    <button id="direction-btn">Horizontal / Vertical</button>
+
+    <div class="ships-container">
+      <div class="ship-1" draggable="true"></div>
+      <div class="ship-2" draggable="true"></div>
+      <div class="ship-3" draggable="true"></div>
+      <div class="ship-4" draggable="true"></div>
+      <div class="ship-5" draggable="true"></div>
+    </div>
+
+    <button id="start-btn">Start the Game</button>
+
+    <script src="App.js"></script>
+  </body>
+</html>

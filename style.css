@@ -1,0 +1,50 @@
+.ships-container {
+  width: 300px;
+  height: 80px;
+  background-color: grey;
+  border: 3 solid black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ship-1 {
+  width: 50px;
+  height: 10px;
+  margin: 3px;
+  background-color: black;
+}
+
+.ship-2 {
+  width: 40px;
+  height: 10px;
+  margin: 3px;
+  background-color: blue;
+}
+
+.ship-3 {
+  width: 30px;
+  height: 10px;
+  margin: 3px;
+  background-color: brown;
+}
+
+.ship-4 {
+  width: 30px;
+  height: 10px;
+  margin: 3px;
+  background-color: purple;
+}
+
+.ship-5 {
+  width: 20px;
+  height: 10px;
+  margin: 3px;
+  background-color: yellowgreen;
+}
+
+button {
+  margin: 5px 0 5px 0;
+}
