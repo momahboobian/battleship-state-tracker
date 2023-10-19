@@ -1,8 +1,7 @@
 .ships-container {
-  width: 300px;
-  height: 80px;
-  background-color: grey;
-  border: 3 solid black;
+  width: 550px;
+  height: 120px;
+  border: 3px solid black;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -11,32 +10,32 @@
 }
 
 .ship-1 {
-  width: 50px;
-  height: 10px;
+  width: 100px;
+  height: 20px;
   background-color: black;
 }
 
 .ship-2 {
-  width: 40px;
-  height: 10px;
+  width: 80px;
+  height: 20px;
   background-color: blue;
 }
 
 .ship-3 {
-  width: 30px;
-  height: 10px;
+  width: 60px;
+  height: 20px;
   background-color: brown;
 }
 
 .ship-4 {
-  width: 30px;
-  height: 10px;
+  width: 60px;
+  height: 20px;
   background-color: purple;
 }
 
 .ship-5 {
-  width: 20px;
-  height: 10px;
+  width: 40px;
+  height: 20px;
   background-color: yellowgreen;
 }
 
