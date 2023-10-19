@@ -45,6 +45,36 @@
   background-color: yellowgreen;
 }
 
+.game-information {
+  display: flex;
+}
+
+.info-container {
+  padding-left: 50px;
+}
+
+#board-container {
+  display: flex;
+  justify-content: space-between;
+  width: 35rem;
+}
+
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 200px;
+  border: 1px solid grey;
+}
+
+.block {
+  width: 20px;
+  height: 20px;
+  border: dashed 0.1px grey;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
 button {
   margin: 5px 0 5px 0;
 }

@@ -7,13 +7,6 @@
     <title>Battleship State Tracker JS</title>
   </head>
   <body>
-    <div class="game-info">
-      <p>Turn: <span id="turn-state"></span></p>
-      <p>Information: <span id="info"></span></p>
-    </div>
-
-    <div id="board-container"></div>
-
     <button id="direction-btn">Horizontal / Vertical</button>
 
     <div class="ships-container">
@@ -24,7 +17,16 @@
       <div class="ship-5" draggable="true"></div>
     </div>
 
-    <button id="start-btn">Start the Game</button>
+    <div class="game-information">
+      <button id="start-btn">Start the Game</button>
+
+      <div class="info-container">
+        <p>Turn: <span id="turn-state"></span></p>
+        <p>Information: <span id="info"></span></p>
+      </div>
+    </div>
+
+    <div id="board-container"></div>
 
     <script src="App.js"></script>
   </body>
