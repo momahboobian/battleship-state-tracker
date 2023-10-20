@@ -1,7 +1,6 @@
 // Select and storing the IDs & Classes
 const shipsContainer = document.querySelector(".ships-container");
 const shipDirection = document.querySelector("#direction-btn");
-const gameBoardsContainer = document.querySelector("#board-container");
 const startBtn = document.querySelector("#start-btn");
 const infoDisplay = document.querySelector("#info");
 const turnDisplay = document.querySelector("#turn-state");
@@ -18,38 +17,9 @@ function direction() {
   shipsArray.forEach((ship) => (ship.style.transform = `rotate(${rotate}deg)`));
 }
 
-// Creating Game Boards (Initializing "width" variable for scalability)
-const borderSize = 10; // width x size & height x size
-
-function createBoard(colour, user) {
-  const gameBoards = document.createElement("div");
-  gameBoards.classList.add("game-board");
-  gameBoards.style.background = colour;
-  gameBoards.id = user;
-
-  for (let i = 0; i < borderSize * borderSize; i++) {
-    const blocks = document.createElement("div");
-    blocks.classList.add("block");
-    blocks.id = i;
-
-    gameBoards.append(blocks);
-  }
-
-  gameBoardsContainer.append(gameBoards);
-}
-
-createBoard("beige", "player");
-createBoard("bisque", "computer");
-
 shipDirection.addEventListener("click", direction);
 
 // Creating Ships using Constructor instead of defining Object Literals
-class Ship {
-  constructor(name, length) {
-    this.name = name;
-    this.length = length;
-  }
-}
 
 const ship1 = new Ship("ship-1", 5);
 const ship2 = new Ship("ship-2", 4);
@@ -190,30 +160,6 @@ blocksAndShips.forEach(function (element) {
   element.addEventListener("drop", drop);
 });
 
-// Game Logic <<<<-----------------------------------
-let gameOver = false;
-let playerTurn;
-
-function startGame() {
-  if (playerTurn === undefined) {
-    if (shipsContainer.children.length != 0) {
-      console.log("All ships must be placed on the board!");
-
-      infoDisplay.textContent = "Please place all your ships on the board!";
-    } else {
-      const allBoardBlocks = document.querySelectorAll("#computer div");
-      allBoardBlocks.forEach((block) =>
-        block.addEventListener("click", handleClick)
-      );
-      playerTurn = true;
-      turnDisplay.textContent = "Your Go!";
-      infoDisplay.textContent = "Game started :)";
-
-      console.log("Game started!");
-    }
-  }
-}
-
 startBtn.addEventListener("click", startGame);
 
 let playerHits = [];
@@ -244,100 +190,5 @@ function handleClick(e) {
     const allBoardBlocks = document.querySelectorAll("#computer div");
     allBoardBlocks.forEach((block) => block.replaceWith(block.cloneNode(true)));
     setTimeout(computerTurn, 2000);
-  }
-}
-
-// Logic for computer Turn <<<<-----------------------------------
-function computerTurn() {
-  if (!gameOver) {
-    turnDisplay.textContent = "Computers Turn!";
-    infoDisplay.textContent = "The Computer is Turn ...";
-
-    setTimeout(() => {
-      let randomGo = Math.floor(Math.random() * borderSize * borderSize);
-      const allBoardBlocks = document.querySelectorAll("#player div");
-
-      if (
-        allBoardBlocks[randomGo].classList.contains("taken") &&
-        allBoardBlocks[randomGo].classList.contains("hit")
-      ) {
-        computerTurn();
-        return;
-      } else if (
-        allBoardBlocks[randomGo].classList.contains("taken") &&
-        !allBoardBlocks[randomGo].classList.contains("hit")
-      ) {
-        allBoardBlocks[randomGo].classList.add("hit");
-        infoDisplay.textContent = "The Computer hit your ship!";
-
-        let classes = Array.from(allBoardBlocks[randomGo].classList);
-        classes = classes.filter((className) => className !== "block");
-        classes = classes.filter((className) => className !== "hit");
-        classes = classes.filter((className) => className !== "taken");
-        computerHits.push(...classes);
-
-        // console.log(computerHits)
-        checkScore("computer", computerHits, computerSunkShips);
-      } else {
-        infoDisplay.textContent = "Nothing hit this time!";
-        allBoardBlocks[randomGo].classList.add("empty");
-      }
-    }, 2000);
-
-    setTimeout(() => {
-      playerTurn = true;
-      turnDisplay.textContent = "Your turn!";
-      infoDisplay.textContent = "Please take your go.";
-      const allBoardBlocks = document.querySelectorAll("#computer div");
-      allBoardBlocks.forEach((block) =>
-        block.addEventListener("click", handleClick)
-      );
-      checkGameStatus();
-    }, 4000);
-  }
-}
-
-function checkScore(user, userHits, userSunkShips) {
-  function checkShip(shipName, shipLength) {
-    if (
-      userHits.filter((storedShipName) => storedShipName === shipName)
-        .length === shipLength
-    ) {
-      if (user === "player") {
-        infoDisplay.textContent = `You sunk the Computer's ${shipName}`;
-
-        playerHits = userHits.filter(
-          (storedShipName) => storedShipName !== shipName
-        );
-      }
-      if (user === "computer") {
-        infoDisplay.textContent = `The Computer sunk your ${shipName}`;
-
-        playerHits = userHits.filter(
-          (storedShipName) => storedShipName !== shipName
-        );
-      }
-      userSunkShips.push(shipName);
-    }
-  }
-  checkShip("ship-1", 5);
-  checkShip("ship-2", 4);
-  checkShip("ship-3", 3);
-  checkShip("ship-4", 3);
-  checkShip("ship-5", 2);
-
-  console.log("playerHits", playerHits);
-  console.log("playerSunkShips", playerSunkShips);
-}
-
-function checkGameStatus() {
-  if (playerSunkShips.length === 5) {
-    infoDisplay.textContent = "You sunk all the computer's ships. YOU WON!";
-    gameOver = true;
-  }
-
-  if (computerSunkShips.length === 5) {
-    infoDisplay.textContent = "The Computer sunk all your ships. YOU LOST!";
-    gameOver = true;
   }
 }
