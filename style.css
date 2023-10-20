@@ -71,3 +71,19 @@
 button {
   margin: 5px 0 5px 0;
 }
+
+/* #computer .ship-1,
+#computer .ship-2,
+#computer .ship-3,
+#computer .ship-4,
+#computer .ship-5 {
+  background-color: bisque;
+} */
+
+.hit {
+  background-color: red !important;
+}
+
+.empty {
+  background-color: grey !important;
+}
