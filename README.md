@@ -34,7 +34,7 @@ The game was developed using HTML, CSS, and JavaScript. It includes features lik
 
 ## Author
 
-- [Your Name]
+- Mo Mahboobian
 
 ## License
 
