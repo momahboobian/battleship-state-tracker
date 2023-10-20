@@ -1,0 +1,26 @@
+{
+  "name": "battleship-state-tracker",
+  "version": "1.0.0",
+  "description": "A Battleship game implementation in JavaScript",
+  "main": "App.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "keywords": [
+    "battleship",
+    "game",
+    "JavaScript"
+  ],
+  "author": "Mo Mahboobian",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

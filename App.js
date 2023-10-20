@@ -162,11 +162,6 @@ blocksAndShips.forEach(function (element) {
 
 startBtn.addEventListener("click", startGame);
 
-let playerHits = [];
-let computerHits = [];
-const playerSunkShips = [];
-const computerSunkShips = [];
-
 function handleClick(e) {
   if (!gameOver) {
     if (e.target.classList.contains("taken")) {
