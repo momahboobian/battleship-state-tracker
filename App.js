@@ -21,11 +21,11 @@ shipDirection.addEventListener("click", direction);
 
 // Creating Ships using Constructor instead of defining Object Literals
 
-const ship1 = new Ship("ship-1", 5);
-const ship2 = new Ship("ship-2", 4);
-const ship3 = new Ship("ship-3", 3);
-const ship4 = new Ship("ship-4", 3);
-const ship5 = new Ship("ship-5", 2);
+const ship1 = new Ship("carrier", 5);
+const ship2 = new Ship("battleship", 4);
+const ship3 = new Ship("destroyer", 3);
+const ship4 = new Ship("submarine", 3);
+const ship5 = new Ship("patrol-boat", 2);
 
 const ships = [ship1, ship2, ship3, ship4, ship5];
 // console.log(ships);
@@ -106,40 +106,39 @@ function dragStart(event) {
   draggedShip.classList.add("dragging");
 }
 
+/**
+ * Handle the end of a drag operation.
+ */
 function dragEnd() {
-  // Remove the dragging class
   if (draggedShip) {
     draggedShip.classList.remove("dragging");
   }
 }
 
-function allowDrop(e) {
+const allowDrop = (e) => {
   e.preventDefault();
-}
+};
 
-function dragOver(e) {
+const dragOver = (e) => {
   e.preventDefault();
-}
+};
 
-function dragEnter(e) {
+const dragEnter = (e) => {
   e.target.classList.add("hovered");
-}
+};
 
-function dragLeave(e) {
+const dragLeave = (e) => {
   e.target.classList.remove("hovered");
-}
+};
 
+/**
+ * Handle the drop operation.
+ * @param {Event} e - The drop event.
+ */
 function drop(e) {
-  // Remove the hovered class
   e.target.classList.remove("hovered");
-
-  // Get the ship's data-id attribute
   const shipId = draggedShip.getAttribute("data-id");
-
-  // Place the ship on the game board
   addShips("player", ships[shipId], parseInt(event.target.id));
-
-  // Remove the ship from the ship container
   if (draggedShip) {
     shipsContainer.removeChild(draggedShip);
     draggedShip = null;
@@ -184,6 +183,6 @@ function handleClick(e) {
     playerTurn = false;
     const allBoardBlocks = document.querySelectorAll("#computer div");
     allBoardBlocks.forEach((block) => block.replaceWith(block.cloneNode(true)));
-    setTimeout(computerTurn, 2000);
+    setTimeout(computerTurn, 1000);
   }
 }
