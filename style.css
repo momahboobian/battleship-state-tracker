@@ -1,39 +1,64 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  text-align: center;
+  max-width: 90%;
+  max-width: 1200px;
+}
+
 .ships-container {
-  width: 550px;
-  height: 120px;
-  border: 3px solid black;
+  width: 100%;
+  height: 150px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 2px;
 }
 
-.ship-1 {
+.carrier,
+.battleship,
+.destroyer,
+.submarine,
+.patrol-boat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjusting ship sizes */
+.carrier {
   width: 100px;
   height: 20px;
   background-color: black;
 }
 
-.ship-2 {
+.battleship {
   width: 80px;
   height: 20px;
   background-color: blue;
 }
 
-.ship-3 {
+.destroyer {
   width: 60px;
   height: 20px;
   background-color: brown;
 }
 
-.ship-4 {
+.submarine {
   width: 60px;
   height: 20px;
   background-color: purple;
 }
 
-.ship-5 {
+.patrol-boat {
   width: 40px;
   height: 20px;
   background-color: yellowgreen;
@@ -44,46 +69,66 @@
 }
 
 .info-container {
-  padding-left: 50px;
+  padding-left: 20px;
+
+  text-align: left;
 }
 
+.info-text {
+  padding: 3px;
+  display: inline-block;
+}
+
+/* Adjusting board sizes */
 #board-container {
   display: flex;
   justify-content: space-between;
-  width: 35rem;
+  gap: 10px;
+  min-width: 35rem;
 }
 
 .game-board {
   display: flex;
   flex-wrap: wrap;
-  width: 200px;
-  height: 200px;
-  border: 1px solid grey;
+  width: 210px;
+  height: 210px;
+  border: 5px solid grey;
 }
 
+/* Adjusting block size */
 .block {
   width: 20px;
   height: 20px;
-  /* border: dashed 0.1px grey;
-  box-sizing: border-box; */
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#computer .carrier,
+#computer .battleship,
+#computer .destroyer,
+#computer .submarine,
+#computer .patrol-boat {
+  background-color: bisque;
 }
 
 button {
   margin: 5px 0 5px 0;
 }
 
-#computer .ship-1,
-#computer .ship-2,
-#computer .ship-3,
-#computer .ship-4,
-#computer .ship-5 {
-  background-color: bisque;
-}
-
+/* Specify styles for hit and empty blocks */
 .hit {
   background-color: red !important;
 }
 
 .empty {
   background-color: grey !important;
+}
+
+@media (max-width: 560px) {
+  /* Media query for screens with a max width of 768px (adjust as needed) */
+  #board-container,
+  .game-information {
+    display: grid;
+    justify-content: center;
+  }
 }

@@ -2,35 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Battleship State Tracker JS</title>
+    <title>Battleship State Tracker</title>
   </head>
   <body>
-    <button id="direction-btn">Ships Orientation</button>
+    <main>
+      <h1>Battleship State Tracker</h1>
+      <button id="direction-btn">Ships Orientation</button>
 
-    <div class="ships-container">
-      <div class="ship-1" draggable="true" data-id="0"></div>
-      <div class="ship-2" draggable="true" data-id="1"></div>
-      <div class="ship-3" draggable="true" data-id="2"></div>
-      <div class="ship-4" draggable="true" data-id="3"></div>
-      <div class="ship-5" draggable="true" data-id="4"></div>
-    </div>
-
-    <div class="game-information">
-      <button id="start-btn">Start the Game</button>
-
-      <div class="info-container">
-        <p>Turn: <span id="turn-state"></span></p>
-        <p>Information: <span id="info"></span></p>
+      <div class="ships-container">
+        <div class="carrier" draggable="true" data-id="0"></div>
+        <div class="battleship" draggable="true" data-id="1"></div>
+        <div class="destroyer" draggable="true" data-id="2"></div>
+        <div class="submarine" draggable="true" data-id="3"></div>
+        <div class="patrol-boat" draggable="true" data-id="4"></div>
       </div>
-    </div>
 
-    <div id="board-container"></div>
+      <div class="game-information">
+        <button id="start-btn">Start the Game</button>
+
+        <div class="info-container">
+          <p>Turn: <span id="turn-state" class="info-text"></span></p>
+          <p>Information: <span id="info" class="info-text"></span></p>
+        </div>
+      </div>
+
+      <div id="board-container"></div>
+    </main>
 
     <script src="ship.js"></script>
     <script src="board.js"></script>
-    <script src="game.js"></script>
+    <script src="gameLogic.js"></script>
+    <script src="gameScore.js"></script>
     <script src="App.js"></script>
   </body>
 </html>
