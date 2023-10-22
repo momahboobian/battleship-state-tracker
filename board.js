@@ -1,9 +1,21 @@
+/**
+ * Create a game board with a title for a user.
+ *
+ * @param {string} colour - The background color of the game board.
+ * @param {string} user - The user identifier ('player' or 'computer').
+ */
 const gameBoardsContainer = document.querySelector("#board-container");
 
-// Creating Game Boards (Initializing "width" variable for scalability)
 const borderSize = 10; // width x size & height x size
 
 function createBoard(colour, user) {
+  const boardContainer = document.createElement("div");
+  boardContainer.classList.add("board-container");
+
+  const title = document.createElement("h2");
+  title.textContent = user === "player" ? "Player" : "Computer";
+  boardContainer.appendChild(title);
+
   const gameBoards = document.createElement("div");
   gameBoards.classList.add("game-board");
   gameBoards.style.background = colour;
@@ -17,14 +29,22 @@ function createBoard(colour, user) {
     gameBoards.append(blocks);
   }
 
-  gameBoardsContainer.append(gameBoards);
+  boardContainer.appendChild(title);
+  boardContainer.appendChild(gameBoards);
+
+  gameBoardsContainer.append(boardContainer);
 }
 
 createBoard("beige", "player");
 createBoard("bisque", "computer");
 
-// Function to add ships to the game board
-// Randomly place each ship on the game board while avoiding overlapping or splitting
+/**
+ * Add ships to the game board.
+ *
+ * @param {string} user - The user identifier ('player' or 'computer').
+ * @param {object} ship - The ship object to add to the board.
+ * @param {number} id - The starting index for ship placement.
+ */
 function addShips(user, ship, id) {
   const allBoardBlocks = document.querySelectorAll(`#${user} div`);
   let randomBool = Math.random() < 0.5;
@@ -33,14 +53,12 @@ function addShips(user, ship, id) {
   let randomStartIndex;
 
   if (id) {
-    randomStartIndex = id; // If an id is provided, use it as the starting index
+    randomStartIndex = id;
   } else {
     if (isHorizontal) {
-      // Ensure that the ship can be placed horizontally without wrapping
       const maxStartIndex = borderSize * borderSize - ship.length;
       randomStartIndex = Math.floor(Math.random() * (maxStartIndex + 1));
     } else {
-      // For vertical ship
       const maxStartIndex = borderSize * borderSize - ship.length * borderSize;
       randomStartIndex = Math.floor(Math.random() * (maxStartIndex + 1));
     }
@@ -79,7 +97,6 @@ function addShips(user, ship, id) {
   }
 }
 
-// Export the functions or objects you want to make available in other files
 window.exports = {
   createBoard,
   addShips,

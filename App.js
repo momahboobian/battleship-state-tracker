@@ -28,7 +28,6 @@ const ship4 = new Ship("submarine", 3);
 const ship5 = new Ship("patrol-boat", 2);
 
 const ships = [ship1, ship2, ship3, ship4, ship5];
-// console.log(ships);
 let notDropped;
 
 // Randomly place each ship on the game board while avoiding overlapping or splitting
@@ -173,7 +172,6 @@ function handleClick(e) {
       classes = classes.filter((className) => className !== "taken");
       playerHits.push(...classes);
 
-      // console.log(playerHits);
       checkScore("player", playerHits, playerSunkShips);
     }
     if (!e.target.classList.contains("taken")) {
