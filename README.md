@@ -15,6 +15,10 @@ This is a classic Battleship game implemented in `JavaScript`, `HTML`, and `CSS`
 
 ![Game Screenshot](./public/battleship.png)
 
+## Live Demo
+
+[Battleship State Tracker](https://battleship-state-tracker-mo.netlify.app/)
+
 ## Features
 
 - **Ship Placement:** Drag and drop your fleet of ships onto the grid.
