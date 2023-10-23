@@ -66,7 +66,6 @@ If you wish to run the application locally, follow these instructions:
 ## Testing:
 
 - **Accessibility:** Test the game's accessibility using a tool like [WAVE](https://wave.webaim.org/) Web Accessibility Evaluation Tool.
-- **Unit Tests:** For instructions on how to run unit tests, please check the Unit Tests section below.
 - **Performance:** Can view the Lighthouse performance report by [clicking here](./public/lighthouse-score.png).
 - **Cross-Browser** The game has been tested in different browsers, including Safari, Edge, Chrome, and Firefox, to ensure compatibility.
 
