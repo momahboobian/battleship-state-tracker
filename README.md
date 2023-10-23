@@ -25,7 +25,6 @@ This is a classic Battleship game implemented in `JavaScript`, `HTML`, and `CSS`
 - **Play Against the Computer:** Challenge the computer, which takes turns attacking your grid.
 - **Orientation Toggle:** Easily change the ship placement orientation (horizontal/vertical).
 - **Information Display:** Game messages are shown in the information display for an interactive experience.
-- **Responsive Design:** The game features a user-friendly interface with a responsive design.
 
 ## How to Play
 
