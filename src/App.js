@@ -3,7 +3,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
-import BattlePage from "./components/BattlePage";
+import BattlePage from "./components/signUp/BattlePage";
 
 function App() {
   return (
