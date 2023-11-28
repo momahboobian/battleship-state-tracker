@@ -1,16 +1,19 @@
+// App.js
+import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+import BattlePage from "./components/BattlePage";
 
 function App() {
   return (
-    <div className="d-flex justify-content-center align-items-center position-relative vh-100 text-white">
-      <div className="main-bg">{/* Main background */}</div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
 
-      <div className="text-center pt-5">
-        <h1 className="display-5 fw-lighter">Welcome to</h1>
-        <p className="battleship-text">Battleship</p>
-        <button className="btn-custom">Start</button>
-      </div>
-    </div>
+        <Route path="/battle" element={<BattlePage />} />
+      </Routes>
+    </Router>
   );
 }
 
