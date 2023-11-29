@@ -26,30 +26,23 @@ function BattlePage() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-10 component-20 border">
-            <div className="text-center p-5">
-              {!joining ? (
-                <>
-                  <h2 className="display-5 text-light fw-lighter">
-                    Welcome comrade!
-                  </h2>
-                  <div className="d-grid gap-2 mt-4">
-                    <button
-                      className="btn btn-primary btn-join"
-                      onClick={handleJoinClick}
-                    >
-                      Join new battle
-                    </button>
-                    <button className="btn btn-secondary btn-return">
-                      Return to battle
-                    </button>
-                  </div>
-                </>
-              ) : loading ? (
-                <h2>Loading...</h2>
-              ) : (
-                <SignUp />
-              )}
-            </div>
+            {!joining ? (
+              <div className="text-center p-5">
+                <h2 className="display-5 text-light fw-lighter">
+                  Welcome comrade!
+                </h2>
+                <div className="d-flex flex-column align-items-center gap-4 p-4 mt-5 pt-5">
+                  <button className="btn-join" onClick={handleJoinClick}>
+                    Join new battle
+                  </button>
+                  <button className="btn-return">Return to battle</button>
+                </div>
+              </div>
+            ) : loading ? (
+              <h2>Loading...</h2>
+            ) : (
+              <SignUp />
+            )}
           </div>
         </div>
       </div>
