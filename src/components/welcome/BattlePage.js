@@ -27,9 +27,7 @@ function BattlePage() {
         <div className="row justify-content-center">
           <div className="col-lg-10 component-20 border">
             <div className="text-center p-5">
-              {loading ? (
-                <h2>Loading...</h2>
-              ) : !joining ? (
+              {!joining ? (
                 <>
                   <h2 className="display-5 text-light fw-lighter">
                     Welcome comrade!
@@ -46,6 +44,8 @@ function BattlePage() {
                     </button>
                   </div>
                 </>
+              ) : loading ? (
+                <h2>Loading...</h2>
               ) : (
                 <SignUp />
               )}
