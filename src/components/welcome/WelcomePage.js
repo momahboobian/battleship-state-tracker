@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import SignUp from "../signUp/SignUp";
-import "./BattlePage.css";
+import "./WelcomePage.css";
 
-function BattlePage() {
+function WelcomePage() {
   const [joining, setJoining] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -58,4 +58,4 @@ function BattlePage() {
   );
 }
 
-export default BattlePage;
+export default WelcomePage;

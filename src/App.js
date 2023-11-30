@@ -3,7 +3,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
-import BattlePage from "./components/welcome/BattlePage";
+import WelcomePage from "./components/welcome/WelcomePage";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
 
-        <Route path="/battle" element={<BattlePage />} />
+        <Route path="/battle" element={<WelcomePage />} />
       </Routes>
     </Router>
   );
