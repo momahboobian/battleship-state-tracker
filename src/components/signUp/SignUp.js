@@ -8,7 +8,7 @@ function SignUp() {
       </h2>
       <div className="d-flex flex-column align-items-center gap-4 p-4 pt-5">
         <div className="col-4 input-effect">
-          <input className="effect-16" type="text" placeholder="" />
+          <input className="custom-input" type="text" placeholder="" />
           <label>First Name</label>
           <span className="focus-border"></span>
         </div>
@@ -17,6 +17,9 @@ function SignUp() {
 
           <button className="btn-next">Next</button>
         </div>
+        <p className="exclamation-text">
+          <span className="exclamation-mark">!</span> Please input your name
+        </p>
       </div>
     </div>
   );

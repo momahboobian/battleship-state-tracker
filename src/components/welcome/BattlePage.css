@@ -64,14 +64,14 @@ input[type="text"] {
   position: relative;
 } /* necessary to give position: relative to parent. */
 
-.effect-16 {
+.custom-input {
   border: 0;
   padding: 4px 0;
   border-bottom: 1px solid #ccc;
   background-color: transparent;
 }
 
-.effect-16 ~ .focus-border {
+.custom-input ~ .focus-border {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -81,12 +81,13 @@ input[type="text"] {
   transition: 0.4s;
 }
 
-.effect-16:focus ~ .focus-border,
-.has-content.effect-16 ~ .focus-border {
+.custom-input:focus ~ .focus-border,
+.has-content.custom-input ~ .focus-border {
   width: 100%;
   transition: 0.4s;
 }
-.effect-16 ~ label {
+
+.custom-input ~ label {
   position: absolute;
   left: 0;
   width: 100%;
@@ -95,9 +96,31 @@ input[type="text"] {
   transition: 0.3s;
   letter-spacing: 0.5px;
 }
-.effect-16:focus ~ label {
+
+.custom-input:focus ~ label {
   top: -16px;
   font-size: 14px;
   color: rgba(116, 1, 116, 0.559);
   transition: 0.3s;
+}
+
+.exclamation-mark {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+
+  border: #7401748f 2px solid;
+  color: #7401748f;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 5px; /* Adjust as needed */
+}
+
+.exclamation-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(116, 1, 116, 0.559);
 }
