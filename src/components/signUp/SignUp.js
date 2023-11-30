@@ -1,6 +1,10 @@
-import React from "react";
+function SignUp({ onBackClick }) {
+  const handleBackClick = () => {
+    setTimeout(() => {
+      onBackClick();
+    }, 500);
+  };
 
-function SignUp() {
   return (
     <div className="text-center p-5">
       <h2 className="display-5 text-light fw-lighter">
@@ -13,7 +17,9 @@ function SignUp() {
           <span className="focus-border"></span>
         </div>
         <div className="d-flex gap-5 p-4">
-          <button className="btn-next">Back</button>
+          <button className="btn-next" onClick={handleBackClick}>
+            Back
+          </button>
 
           <button className="btn-next">Next</button>
         </div>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import "./BattlePage.css";
+import { useState, useEffect } from "react";
 import SignUp from "../signUp/SignUp";
+import "./BattlePage.css";
 
 function BattlePage() {
   const [joining, setJoining] = useState(false);
@@ -9,13 +9,17 @@ function BattlePage() {
   useEffect(() => {
     const delay = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Delay for 2 seconds (2000 milliseconds)
+    }, 2000);
 
     return () => clearTimeout(delay);
   }, []);
 
   const handleJoinClick = () => {
     setJoining(true);
+  };
+
+  const handleBackClick = () => {
+    setJoining(false);
   };
 
   return (
@@ -39,9 +43,13 @@ function BattlePage() {
                 </div>
               </div>
             ) : loading ? (
-              <h2>Loading...</h2>
+              <div className="spinner-container d-flex justify-content-center align-items-center vh-100">
+                <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
             ) : (
-              <SignUp />
+              <SignUp onBackClick={handleBackClick} />
             )}
           </div>
         </div>
