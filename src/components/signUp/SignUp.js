@@ -1,8 +1,12 @@
-function SignUp({ onBackClick }) {
+function SignUp({ onBackClick, handleNextClick }) {
   const handleBackClick = () => {
     setTimeout(() => {
       onBackClick();
     }, 500);
+  };
+
+  const handleNext = () => {
+    handleNextClick();
   };
 
   return (
@@ -16,13 +20,16 @@ function SignUp({ onBackClick }) {
           <label>First Name</label>
           <span className="focus-border"></span>
         </div>
+
         <div className="d-flex gap-5 p-4">
           <button className="btn-next" onClick={handleBackClick}>
             Back
           </button>
-
-          <button className="btn-next">Next</button>
+          <button className="btn-next" onClick={handleNext}>
+            Next
+          </button>{" "}
         </div>
+
         <p className="exclamation-text">
           <span className="exclamation-mark">!</span> Please input your name
         </p>
