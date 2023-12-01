@@ -1,4 +1,4 @@
-import "./GameBoard.css"; // Import your CSS file for additional styling
+import "./GameBoard.css";
 
 function GameBoard() {
   // Generate a 10x10 grid for the game board

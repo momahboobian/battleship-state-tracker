@@ -1,9 +1,9 @@
-import React from "react";
+import GameBoard from "../gameBoard/GameBoard";
 
 function BattlePage() {
   return (
     <div>
-      <h1>BattlePage</h1>
+      <GameBoard />
     </div>
   );
 }
