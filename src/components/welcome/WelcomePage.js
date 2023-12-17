@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import SignUp from "../signUp/SignUp";
 import GameBoard from "../gameBoard/GameBoard";
 import "./WelcomePage.css";
