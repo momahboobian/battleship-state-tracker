@@ -1,3 +1,5 @@
+import React from "react";
+
 function SignUp({ onBackClick, handleNextClick }) {
   const handleBackClick = () => {
     setTimeout(() => {

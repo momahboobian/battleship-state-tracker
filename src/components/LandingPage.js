@@ -1,6 +1,3 @@
-// LandingPage.js
-import React from "react";
-
 function LandingPage() {
   return (
     <div className="d-flex justify-content-center align-items-center position-relative vh-100 text-white">
