@@ -27,7 +27,7 @@ function SignUp({ onBackClick, handleNextClick }) {
           </button>
           <button className="btn-next" onClick={handleNext}>
             Next
-          </button>{" "}
+          </button>
         </div>
 
         <p className="exclamation-text">
